@@ -1,0 +1,31 @@
+<div class="container-80">
+  <div class="normalheader">
+     <div class="hpanel box-shadow-2">
+        <div class="panel-body">
+           <%= Date.today %>
+           <h2 class="font-light m-b-xs">
+              Nuevo movimiento de inasistencia
+           </h2>
+        </div>
+     </div>
+  </div>
+  <div class="content">
+     <div class="row">
+        <div class="col-lg-12">
+          <div class="hpanel box-shadow-2">
+            <div class="panel-body">
+              <%= render 'form', attendance: @attendance %>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="hpanel box-shadow-2">
+            <div class="panel-body">
+
+
+            </div>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>

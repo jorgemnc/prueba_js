@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="description" content="A complete landing page solution for any business">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <%= csrf_meta_tags %>
+
+      <!-- Main css -->
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+      <!-- Main Js -->
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+
+   </head>
+   <body class="light-skin fixed-navbar sidebar-scroll">
+
+      <!-- Menu Partials -->
+      <%= render 'layouts/navigation' %>
+
+
+
+      <%= render "shared/alerts" %>
+
+
+      <!-- Sidebar Partials -->
+      <%= render 'layouts/sidebar_communities' %>
+
+
+      <!-- NAV VUE Partials -->
+      <div id="wrapper">
+      <%= render 'shared/top_nav_vue_admin' %>
+
+      <%= yield %>
+
+
+   </body>
+</html>
+

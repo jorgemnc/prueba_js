@@ -1,0 +1,91 @@
+<%= form_with(model: attendance, local: true) do |form| %>
+  <% if attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+
+      <ul>
+      <% attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :movimiento %><br>
+          <%= form.select(:movimiento, options_for_select([
+            ["Contratación a plazo indefinido", "Contratación a plazo indefinido"],
+            ["Retiro", "Retiro"],
+            ["Subsidios", "Subsidios"],
+            ["Permiso sin goce de sueldo", "Permiso sin goce de sueldo"],
+            ["Incorporación al lugar de trabajo", "Incorporación al lugar de trabajo"],
+            ["Accidente del trabajo", "Accidente del trabajo"],
+            ["Contratación a plazo fijo", "Contratación a plazo fijo"],
+            ["Cambio desde contrato plazo fijo a plazo indefinido", "Cambio desde contrato plazo fijo a plazo indefinido"]
+            ],  selected: form.object.movimiento), { include_blank: false, prompt: "Selecciona un movimiento" }, class:"form-control input-sm") %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :inicio %><br>
+          <%= form.date_select :inicio, :order => [:day, :month, :year ] %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :termino %><br>
+          <%= form.date_select :termino, :order => [:day, :month, :year ] %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="field m-t-sm">
+            <%= link_to 'Cancelar', root_path, class:"btn btn-outline-salmonvue m-r-md" %>
+            <%= form.submit "Guardar", class:"btn btn-salmonvue" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>

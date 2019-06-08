@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Movimiento:</strong>
+  <%= @attendance.movimiento %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @attendance.inicio %>
+</p>
+
+<p>
+  <strong>Termino:</strong>
+  <%= @attendance.termino %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
+<%= link_to 'Back', attendances_path %>
