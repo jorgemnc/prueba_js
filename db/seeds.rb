@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+ReasonForNonAttendance.create(motivo: "Contratación a plazo indefinido")
+ReasonForNonAttendance.create(motivo: "Retiro")
+ReasonForNonAttendance.create(motivo: "Subsidios")
+ReasonForNonAttendance.create(motivo: "Permiso sin goce de sueldo")
+ReasonForNonAttendance.create(motivo: "Incorporación al lugar de trabajo")
+ReasonForNonAttendance.create(motivo: "Accidente del trabajo")
+ReasonForNonAttendance.create(motivo: "Contratación a plazo fijo")
+ReasonForNonAttendance.create(motivo: "Cambio desde contrato plazo fijo a plazo indefinido")

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reason For Non Attendances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Motivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reason_for_non_attendances.each do |reason_for_non_attendance| %>
+      <tr>
+        <td><%= reason_for_non_attendance.motivo %></td>
+        <td><%= link_to 'Show', reason_for_non_attendance %></td>
+        <td><%= link_to 'Edit', edit_reason_for_non_attendance_path(reason_for_non_attendance) %></td>
+        <td><%= link_to 'Destroy', reason_for_non_attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reason For Non Attendance', new_reason_for_non_attendance_path %>

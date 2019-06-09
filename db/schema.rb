@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_003046) do
+ActiveRecord::Schema.define(version: 2019_06_09_231257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2019_06_08_003046) do
     t.string "movimiento"
     t.date "inicio"
     t.date "termino"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "reason_for_non_attendance_id"
+    t.index ["reason_for_non_attendance_id"], name: "index_attendances_on_reason_for_non_attendance_id"
+  end
+
+  create_table "reason_for_non_attendances", force: :cascade do |t|
+    t.string "motivo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,4 +64,5 @@ ActiveRecord::Schema.define(version: 2019_06_08_003046) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attendances", "reason_for_non_attendances"
 end

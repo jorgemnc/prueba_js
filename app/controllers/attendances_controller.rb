@@ -69,6 +69,6 @@ class AttendancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      params.require(:attendance).permit(:movimiento, :inicio, :termino)
+      params.require(:attendance).permit(:reason_for_non_attendance_id, :inicio, :termino)
     end
 end

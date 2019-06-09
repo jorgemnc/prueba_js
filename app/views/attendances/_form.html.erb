@@ -27,16 +27,14 @@
       <div class="form-group">
         <div class="field">
           <%= form.label :movimiento %><br>
-          <%= form.select(:movimiento, options_for_select([
-            ["Contratación a plazo indefinido", "Contratación a plazo indefinido"],
-            ["Retiro", "Retiro"],
-            ["Subsidios", "Subsidios"],
-            ["Permiso sin goce de sueldo", "Permiso sin goce de sueldo"],
-            ["Incorporación al lugar de trabajo", "Incorporación al lugar de trabajo"],
-            ["Accidente del trabajo", "Accidente del trabajo"],
-            ["Contratación a plazo fijo", "Contratación a plazo fijo"],
-            ["Cambio desde contrato plazo fijo a plazo indefinido", "Cambio desde contrato plazo fijo a plazo indefinido"]
-            ],  selected: form.object.movimiento), { include_blank: false, prompt: "Selecciona un movimiento" }, class:"form-control input-sm") %>
+          <%= form.collection_select(:reason_for_non_attendance_id, ReasonForNonAttendance.all, :id, :motivo,
+                              {
+                                include_blank: false,
+                                prompt: "Selecciona un movimiento de inasistencia"
+                              },
+                              class: 'form-control'
+                            )
+          %>
         </div>
       </div>
     </div>

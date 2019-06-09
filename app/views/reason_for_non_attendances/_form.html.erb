@@ -1,0 +1,22 @@
+<%= form_with(model: reason_for_non_attendance, local: true) do |form| %>
+  <% if reason_for_non_attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reason_for_non_attendance.errors.count, "error") %> prohibited this reason_for_non_attendance from being saved:</h2>
+
+      <ul>
+      <% reason_for_non_attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :motivo %>
+    <%= form.text_field :motivo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
