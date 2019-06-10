@@ -3,7 +3,7 @@ document.addEventListener 'turbolinks:load', ->
   window.form && initForm();
 
 initForm = () ->
-  choice = window.form.querySelector("select[name='attendance[movimiento]']");
+  choice = window.form.querySelector(".attendance-select");
   rule   = getRule(choice)
   applyRules(rule)
 
@@ -12,7 +12,7 @@ initForm = () ->
     applyRules(rule)
 
 getRule = (choice) ->
-  selected = choice.options[choice.selectedIndex].value
+  selected = choice.options[choice.selectedIndex].value && choice.options[choice.selectedIndex].innerText
   selected = selected || 'unselected'
   rules[choice.name][selected]
 
@@ -38,7 +38,7 @@ toggleElements = (selectors, toggle) ->
       container.disabled = toggle
 
 rules =
-  'attendance[movimiento]':
+  'attendance[reason_for_non_attendance_id]':
     'unselected':
       enable: []
       disable: ['.termino', '.inicio', '.guardar']
